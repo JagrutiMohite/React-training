@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import {
+  Link
+} from "react-router-dom";
 
 
 
 export default class sideBar extends Component {
     render() {
         return (
-
       <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 
@@ -19,18 +21,37 @@ export default class sideBar extends Component {
       <hr className="sidebar-divider my-0" />
 
       <li className="nav-item active">
-        <a className="nav-link" href="index.html">
+      <Link className="nav-link" to="/">
           <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Dashboard</span>
+        </Link>
       </li>
 
       <hr className="sidebar-divider my-0" />
 
       <li className="nav-item active">
-        <a className="nav-link" href="index.html">
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>COVID-19</span></a>
+          <Link className="nav-link" to="/covid">
+          <i className="fas fa-fw fa-chart-area"></i>
+          <span>COVID-19</span>
+          </Link>
       </li>
+
+      <hr className="sidebar-divider my-0" />
+
+      <li className="nav-item">
+      <Link className="nav-link" to="/search">
+          <i className="fas fa-fw far fa-search"></i>
+          <span>Search</span>
+          </Link>
+      </li>
+      <hr className="sidebar-divider my-0" />
+
+        <li className="nav-item">
+        <Link className="nav-link" to="/report">
+            <i className="fas fa-fw far fa-info-circle"></i>
+            <span>Report</span>
+            </Link>
+        </li>
 
       <hr className="sidebar-divider"/>
 
@@ -48,7 +69,7 @@ export default class sideBar extends Component {
         <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Custom Components:</h6>
-            <a className="collapse-item" href="Buttons.jsx">Buttons</a>
+            <Link className="collapse-item" to='/Buttons'>Buttons</Link>
             <a className="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
@@ -119,7 +140,8 @@ export default class sideBar extends Component {
         <button className="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
-    </ul>          
+    </ul>    
+    
 
           );
     }

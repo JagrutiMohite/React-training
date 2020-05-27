@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-export default class EarnOverview extends Component {
+export default class Covid extends Component {
     render() {
         return (
-            <div className="col-xl-8 col-lg-7">
+            <div className="col-xl-8">
               <div className="card shadow mb-4">
 
                 <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">

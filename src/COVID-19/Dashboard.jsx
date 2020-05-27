@@ -10,51 +10,54 @@ import ProjectsButtons from '../DashContent/ProjectsButtons'
 export default class Content extends Component {
     render() {
         return (
-            <div class="container-fluid">
-              <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <div className="container-fluid">
+              <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+                <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i className="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
               </div>
 
-              <div class="row">
+              <div className="row">
 
               <CardContent 
                 Border="card border-left-primary shadow h-100 py-2"
                 Title="Earnings (Monthly)"
                 Value="$40,000"
                 Classname="fas fa-calendar fa-2x text-gray-300"
+                Text="text-xs font-weight-bold text-primary text-uppercase mb-1"
               />
               <CardContent 
                 Border="card border-left-success shadow h-100 py-2"
                 Title="Earnings (Annual)"
                 Value="$215,000"
                 Classname="fas fa-dollar-sign fa-2x text-gray-300"
+                Text="text-xs font-weight-bold text-success text-uppercase mb-1"
               />
               <CardContent 
                 Border="card border-left-warning shadow h-100 py-2"
                 Title="Pending Requests"
                 Value="18"
                 Classname="fas fa-comments fa-2x text-gray-300"
+                Text="text-xs font-weight-bold text-warning text-uppercase mb-1"
               />
-              <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+              <div className="col-xl-3 col-md-6 mb-4">
+              <div className="card border-left-info shadow h-100 py-2">
+                <div className="card-body">
+                  <div className="row no-gutters align-items-center">
+                    <div className="col mr-2">
+                      <div className="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                      <div className="row no-gutters align-items-center">
+                        <div className="col-auto">
+                          <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
                         </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style={{width: "50%"}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div className="col">
+                          <div className="progress progress-sm mr-2">
+                            <div className="progress-bar bg-info" role="progressbar" style={{width: "50%"}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    <div className="col-auto">
+                      <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -62,16 +65,16 @@ export default class Content extends Component {
             </div>
               </div>
 
-              <div class="row">
+              <div className="row">
                 <EarnOverview/>
                 <Revenue/>
               </div>
 
-              <div class="row">
-              <div class="col-lg-6 mb-4">
-                <div class="card shadow mb-4">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+              <div className="row">
+              <div className="col-lg-6 mb-4">
+                <div className="card shadow mb-4">
+                  <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
                   </div>
                     <Projects
                       Title= "Server Migration"
@@ -92,55 +95,55 @@ export default class Content extends Component {
                       style={{width: "60%"}}
                     />
                     <Projects
-                      Title= "Sales Tracking"
+                      Title= "Payout Details"
                       Value="80%"
                       Classname="progress-bar bg-info"
                       style={{width: "80%"}}
                     />
                     <Projects
-                      Title= "Sales Tracking"
-                      Value="100%"
+                      Title= "Account Setup"
+                      Value="Complete!"
                       Classname="progress-bar bg-success"
                       style={{width: "100%"}}
                     />
                   </div>
-                    <div class="row">
-                      <div class="col-lg-6 mb-4">
+                    <div className="row">
+                      <div className="col-lg-6 mb-4">
                         <ProjectsButtons
                           Classname="card bg-primary text-white shadow"
                           Title="Primary"
                           Text="#4e73df"
                         />
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div className="col-lg-6 mb-4">
                         <ProjectsButtons
                           Classname="card bg-success text-white shadow"
                           Title="Success"
                           Text="#1cc88a"
                         />
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div className="col-lg-6 mb-4">
                         <ProjectsButtons
                           Classname="card bg-info text-white shadow"
                           Title="Info"
                           Text="#36b9cc"
                         />
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div className="col-lg-6 mb-4">
                         <ProjectsButtons
                           Classname="card bg-warning text-white shadow"
                           Title="Warning"
                           Text="#f6c23e"
                         />
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div className="col-lg-6 mb-4">
                         <ProjectsButtons
                           Classname="card bg-danger text-white shadow"
                           Title="Danger"
                           Text="#e74a3b"
                         />
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div className="col-lg-6 mb-4">
                         <ProjectsButtons
                           Classname="card bg-secondary text-white shadow"
                           Title="Secondary"
@@ -149,7 +152,7 @@ export default class Content extends Component {
                       </div>
                     </div>
                   </div>
-                <div class="col-lg-6 mb-4">
+                <div className="col-lg-6 mb-4">
                   <Illustrations
                     Title=""
                   />
