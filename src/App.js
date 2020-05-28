@@ -8,7 +8,7 @@ import SideBar from './common/sideBar';
 import NavTop from './common/navTop';
 import Dashboard from './COVID-19/Dashboard';
 import Footer from './common/Footer';
-import Covid from './COVID-19/Covid';
+import Covid from './COVID-19/CovidSummary';
 import Search from './COVID-19/Search';
 import Report from './COVID-19/Report';
 

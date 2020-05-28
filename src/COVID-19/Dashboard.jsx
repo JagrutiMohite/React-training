@@ -6,8 +6,31 @@ import Projects from '../DashContent/Projects';
 import Illustrations from '../DashContent/Illustrations';
 import Development from '../DashContent/Development';
 import ProjectsButtons from '../DashContent/ProjectsButtons'
+import CovidSummary from './CovidSummary';
+let urlSummary = "https://api.covid19api.com/summary";
 
 export default class Content extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        Global:{},
+        CountriesData:[]
+    };
+}
+
+componentDidMount(){
+    fetch(urlSummary)
+    .then(res=>res.json())
+    .then(data=>{
+        this.setState({
+            Global:data.Global,
+            CountriesData:data.Countries
+        })
+        console.log(this.state.Global);
+        console.log(this.state.CountriesData);
+    })
+}
+
     render() {
         return (
             <div className="container-fluid">
@@ -20,22 +43,22 @@ export default class Content extends Component {
 
               <CardContent 
                 Border="card border-left-primary shadow h-100 py-2"
-                Title="Earnings (Monthly)"
-                Value="$40,000"
+                Title="Total Confirmed Cases"
+                Value={this.state.Global.TotalConfirmed}
                 Classname="fas fa-calendar fa-2x text-gray-300"
                 Text="text-xs font-weight-bold text-primary text-uppercase mb-1"
               />
               <CardContent 
                 Border="card border-left-success shadow h-100 py-2"
-                Title="Earnings (Annual)"
-                Value="$215,000"
+                Title="Total Confirmed Death"
+                Value={this.state.Global.TotalDeaths}
                 Classname="fas fa-dollar-sign fa-2x text-gray-300"
                 Text="text-xs font-weight-bold text-success text-uppercase mb-1"
               />
               <CardContent 
                 Border="card border-left-warning shadow h-100 py-2"
-                Title="Pending Requests"
-                Value="18"
+                Title="Total Confirmed Recover"
+                Value={this.state.Global.TotalRecovered}
                 Classname="fas fa-comments fa-2x text-gray-300"
                 Text="text-xs font-weight-bold text-warning text-uppercase mb-1"
               />
@@ -66,8 +89,16 @@ export default class Content extends Component {
               </div>
 
               <div className="row">
-                <EarnOverview/>
-                <Revenue/>
+                {/*<EarnOverview/>*/}
+                <CovidSummary
+                  NewConfirmed={this.state.Global.NewConfirmed}
+                  TotalConfirmed={this.state.Global.TotalConfirmed}
+                  NewDeaths={this.state.Global.NewDeaths}
+                  TotalDeaths={this.state.Global.TotalDeaths}
+                  NewRecovered={this.state.Global.NewRecovered}
+                  TotalRecovered={this.state.Global.TotalRecovered}
+                />
+                <Revenue  />
               </div>
 
               <div className="row">
@@ -154,7 +185,7 @@ export default class Content extends Component {
                   </div>
                 <div className="col-lg-6 mb-4">
                   <Illustrations
-                    Title=""
+
                   />
                   <Development/>
                 </div>
